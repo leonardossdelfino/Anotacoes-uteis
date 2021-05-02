@@ -1,4 +1,4 @@
-### Rocketseat 
+Rocketseat 
 
 ### Discovery - Guia Estelar
 
@@ -96,3 +96,185 @@ Conecta um elemento HTML com o CSS
 - Para usar uma `class` no CSS usa `.`. Ex: `.m-40` ("margem 40px")
 - Attribute selector, Pseudo-class, Pseudo-element, e outros.
 
+
+
+**Box model**
+
+Tudo basicamente são caixas, o conteúdo é organizado em caixas alinhadas no nosso site.
+
+
+
+### Adicionando o CSS no documento HTML
+
+````html
+<!-- Inline -->
+<h1 style="color: red;">TEXTO</h1>
+````
+
+`````html
+<!-- No HTML -->
+<head>
+    <style>
+        h1 { color: "red" }
+    </style>
+</head>
+`````
+
+````html
+<!-- Usando uma folha de estilo a parte -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Criado um arquivo <u>style.css</u> colocado dentro da mesma pasta do HTML ou em outro diretório. -->
+````
+
+
+
+### Especificidade (força)
+
+`* { }`: Seletor universal - Valor 0 - (:not())
+
+`h1 {}, h2 {}, body {}, etc`: Element selector e pseudo-elements (::before, ::after)  - Valor 1
+
+class: `HTML(<h1 class="title">Título</h1>)`  `style.css(.title{ color: red; })` - Valor 10
+
+id: `HTML(<h1 id="title">Título</h1>)` `style.css(#title{ color: red; }` - Valor 100
+
+inline: Valor 1000
+
+
+
+**Agrupamentos**
+
+
+
+HTML
+
+````html
+<h1 class="title" id="title">TEXTO</h1>
+````
+
+CSS
+
+````css
+h1.title#title { color: "red"; }
+````
+
+Especificando o mais ainda dentro do h1
+
+````css
+#title strong { color: "gray" }
+````
+
+
+
+**!important**
+
+Sobreescreve todas as outras regras.
+Geralmente usado quando estamos usando o css de outra pessoa, fora isso não usar.
+
+````css
+`h1 { color: "red" "important"; }`
+````
+
+
+
+## Exemplo
+
+<img src="C:\Users\Leonardo\Documents\GitHub\Anotacoes-uteis\HTML-1619970727418.png" alt="HTML" style="zoom:33%;" />
+
+<img src="C:\Users\Leonardo\Documents\GitHub\Anotacoes-uteis\CSS-1619970732648.png" style="zoom: 50%;" />
+
+
+
+### Regras com @
+
+**Exemplos comuns**
+
+- **@import:** incluir um CSS externo 
+  - @import "http://local.com/style.css"
+- **@media:** regras condicionais para dispositivos
+  - @media (min-width: 500px)
+- **@font-face:** fontes externas
+  - @fontface {}
+- **@keyframes:** Animation
+  - @keyframes nameofanimation {}
+
+### Shorthand
+
+````css
+{
+    /* background properties */
+    background-color: #000;
+    background-image: url(images/bg.gif);
+    background-repeat: no-repeat;
+    background-position: left top;
+    
+    /* background shorthand */
+    background: #000 url(images/bg.gif) no-repeat left top;
+    
+    /* font properties */
+    font-style: italic;
+    font-weight: bold;
+    font-size: .8em;
+    font-height: 1.2;
+    font-family: Arial, sans-serif;
+    
+    /* font shorthand */
+    font: italic bold .8em/1.2 Arial, sans-serif;
+}
+````
+
+**Detalhes**
+
+- não irá considerar propriedades anteriores
+- valores não especificados irão assumir o valor padrão da font
+- geralmente, a ordem descrita não importa, mas, se houver muitas propriedades com valores semelhantes poderemos encontrar problemas
+
+**Propriedades que aceitam shorthand**
+
+**https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties**
+
+
+
+### Funções
+
+**Funções**
+
+- nome seguido de abre e fecha parentesis
+- recebe argumentos, ficam dentro dos parentesis
+
+**Exemplos**
+
+`````css
+@import url("http://urlaqui.com/style.css")
+
+{
+    color: rgb(255,0,100);
+    width: calc(100% - 10px);
+}
+`````
+
+
+
+### Vendor Prefixes - Compatibilidade com os browser
+
+Permite que browsers adicione **features** a fim de colocar em uso novidades que vemos no CSS.
+
+**Exemplo**
+
+````css
+p {
+    -webkit-background-clip: text; /* Chrome, Safari, iOS e Android */
+    -moz-background-clip: text; /* Mozilla (Firefox) */
+    -ms-background-clip: text; /* Internet Explorer */
+    -o-background-clip: text; /* Opera */
+}
+````
+
+
+
+**Consultas**
+
+http://ireade.github.io/witch-vendor-prefix/
+
+http://caniuse.com
