@@ -278,3 +278,53 @@ p {
 http://ireade.github.io/witch-vendor-prefix/
 
 http://caniuse.com
+
+
+
+----------
+
+
+
+# Javascript
+
+**String**: Cadeia de cadeia de caracteres
+
+````javascript
+// Interpolação
+console.log(`${1 + 1}`)
+````
+
+**Number**: Números
+
+**Boolean**: True ou False
+
+**Undefinide x Null**: 
+
+- <u>undefinide</u>
+  - Indefinido
+- <u>null</u>
+  - nulo
+  - objeto que não possui nada dentro
+  - diferente de indefinido
+
+**Object**:
+
+-  Objeto
+- Propriedades / Atributos
+- Funcionalidades / Métodos
+
+````javascript
+const obj = {
+    propriedade: "valor"
+}
+````
+
+**Array**: 
+
+- Uma lista
+- Agrupamento de dado
+
+`````javascript
+const lista = ["Leo", 31]
+`````
+
