@@ -328,3 +328,10 @@ const obj = {
 const lista = ["Leo", 31]
 `````
 
+
+
+## Scope
+
+**Block statement**: Declaração de bloco
+
+**Hoisting**: O **JS** eleva a variável **var** para o topo, pois ela é global, mesmo eu chamando ela antes de declarar ele vai encontrar.
